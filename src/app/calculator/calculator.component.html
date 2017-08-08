@@ -1,0 +1,25 @@
+<div>
+<h1>
+  {{title}}
+</h1>
+<button (click)="reverse()" class="btn btn-success">reverse</button>
+<br><br><br>
+<div class="form-inline">
+  <label> enter 1st value : </label><input #t1 [(ngModel)]='p1'  class="form-control" type="number" placeholder="number" (blur)="changeNumberOne(t1.value,op.value);" value="" required><br>
+  <label> enter 2st value : </label><input #t2 [(ngModel)]='p2'  class="form-control" type="number" placeholder="number" (blur)="changeNumberTwo(t2.value,op.value);" value="" required><br><br>
+  <label> select any option :</label>
+  <select #op (change)="changeEvent(op.value)" class="form-control">
+    <option></option>
+    <option>add</option>
+    <option>sub</option>
+    <option>mul</option>
+    <option>div</option>
+  </select><br> <br>
+  Result : <input class="form-control" type="number" name="t1" value={{result}} >
+</div>
+<h1>
+  Result : {{result}}
+</h1>
+
+</div>
+      

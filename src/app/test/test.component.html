@@ -1,0 +1,38 @@
+<div>
+    <div style="float:left;width:50%">
+        
+        <h2 *ngIf="isVisible">
+            {{title}}
+        </h2>
+
+        <button (click)="changeVisiblity()" type="button" class="btn btn-default">{{isVisible}}</button>
+        <br>
+        <br>
+        <div class="form-group">
+            <input type="text" style="width:50%" [(ngModel)]='pass' placeholder="text" class="form-control"><br>
+            <input type="text" style="width:50%" [(ngModel)] ='pass1' (keyup)='check()' class="form-control" [ngStyle]="{ 'color':color }" placeholder="reenter text" >
+        </div>
+        <br>
+
+        <p  [testDir]>Highlighted in red</p>
+
+        <br>
+        <div class="row">
+            <div class="col-xs-3">    
+                <ul class="list-group">
+                    <li *ngFor="let i of list;  let j=index" class="list-group-item">
+                        {{j}} -> {{i}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>        
+
+    <div> 
+        <h3>pipes</h3> 
+        <input type="number" style="width:25%" class="form-control" [(ngModel)]='t1' >
+        <input type="number" style="width:25%" class="form-control" [(ngModel)]='t2' >
+        <h4>result : {{t1 | testPipe : t2}}</h4>
+    </div>
+
+</div>

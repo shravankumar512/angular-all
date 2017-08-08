@@ -1,0 +1,40 @@
+<div align="right">
+    <div class="">
+        <div class="form-group input-group"  style="width:25%">
+            <input type="text" class="form-control" placeholder="Search.." [(ngModel)]='t1' value="">
+            <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+            </span>  
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <button type="button" class="btn btn-primary" (click)="show()">{{showhide}}</button>
+                <th>ProductName</th>
+                <th>ProductCode</th>
+                <th (click)="dateFormat()">ReleaseDate</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>StarRating</th>
+            </tr>
+        </thead>    
+        <tbody>
+            <tr *ngFor="let product of products | productPipe : t1 ">
+        
+                <td><img *ngIf="showImg" src="{{product.imageUrl}}" alt="photo" width="30px" height="30px" title="{{product.productName | uppercase}}"/></td>
+        
+                <td>{{product.productName }}</td>
+                <td>{{product.productCode}}</td>
+                <td>{{product.releaseDate | date:format }}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price | currency:'INR':true}}</td>
+                <td>{{product.starRating}}</td>
+            </tr>
+        </tbody>       
+    </table>
+</div>

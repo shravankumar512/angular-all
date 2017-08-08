@@ -1,0 +1,13 @@
+<div style="border: 2px solid red;border-radius: 5px;padding:20px"> 
+    
+    <div class="form-group">
+        <input class="form-control" style="width: 25%" type="number" [(ngModel)]='no' placeholder="number"><br>
+        <label> parent works...! : {{no}}</label>
+        <app-child [noObject]="no" (done)="countChange($event)"></app-child><br>
+        <label> progress : {{progress}} </label>
+
+    </div>
+
+</div>
+
+

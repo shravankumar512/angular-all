@@ -1,0 +1,18 @@
+<div class="jumbotron">
+    <h2 style="text-align: center">Emp details</h2>
+    <div class="row">
+        <div class="col-xs-4">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor='let i of emplist' (click)="onSelect(i)" [class.selected]="isSelected(i)">
+                    <span class="badge">{{i.id}}</span>
+                    {{i.name}}
+                </li>
+            </ul>   
+        </div>
+        <div class="col-xs-8">
+            <div style="border: 2px solid red;border-radius: 5px;padding:20px">
+                    <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
